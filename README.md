@@ -1,8 +1,15 @@
 Note: To load the extension onto a chromium browser, clone this repo, run npm install, then npm run build and then load unpacked the build directory
 
+Leaving a review: 
+![leaving review](https://i.imgur.com/MYTqwH5.gif)
+
+Trying to leave more than one review (the same ip can only review the same user once.)
+![leaving more than one review](https://i.imgur.com/kBicDR0.gif)
+
 TODO:
 - Refine the UI so it looks cleaner
 - Add a content script that interacts with the storage-API to serve as a caching mechanism to avoid spamming the server.
+- If the user has already voted, let him update the vote by sending an HTTP PATCH to the server
 
 ## Available Scripts
 
