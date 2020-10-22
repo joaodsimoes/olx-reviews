@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Note: To load the extension onto a chromium browser, clone this repo, run npm install, then npm run build and then load unpacked the build directory
+
 ## Available Scripts
 
 In the project directory, you can run:
