@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Note: To load the extension onto a chromium browser, clone this repo, run npm install, then npm run build and then load unpacked the build directory
 
-TODO://
+TODO:
 - Refine the UI so it looks cleaner
 - Add a content script that interacts with the storage-API to serve as a caching mechanism to avoid spamming server.
 
