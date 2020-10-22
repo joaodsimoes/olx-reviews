@@ -1,25 +1,20 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+  "short_name": "OLX Reviews",
+  "name": "OLX Reviews",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "index.html",
+    "default_title": "OLX Reviews"
+  },
+  "permissions": [
+    "tabs",
+    "declarativeContent",
+    "storage"
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "version": "1.0",
+  "content_security_policy": "script-src 'self' 'sha256-QQHU6tr/RSfv3igKgXprn83d/KWHJktHdjye4fIsifQ='; object-src 'self'"
 }
