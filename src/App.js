@@ -27,18 +27,29 @@ const Info = ({ message, info }) => {
 
 const UserRating = ({ stars }) => {
   return (
-    <div style={{ margin: "auto" }}>
+    <div>
       <Typography variant="subtitle2" component="subtitle2">
         Score:
       </Typography>
-      <Rating name="read-only" value={stars} size="small" precision={0.25} readOnly />
+      <div
+        style={{
+          position: 'fixed', left: '50%', top: '60%',
+          transform: 'translate(-50%, -50%)',
+        }}
+      >
+        <Rating name="read-only" value={stars} size="small" precision={0.25} readOnly />
+      </div>
     </div>
   )
 
 }
 
-const Message = ({ message }) => <p style={{ textAlign: "center" }}>{message}</p>
-
+const Message = ({ message }) =>{
+return(
+  <div style= {{marginTop: "30px"}}>
+    <p style={{ textAlign: "center" }}>{message}</p>
+  </div>
+)}
 function App() {
   const [value, setValue] = useState(0);
   const [hasVoted, setVoted] = useState(false);
@@ -53,18 +64,18 @@ function App() {
       const url = JSON.stringify(tabs[0].url);
       const currentUser = url.split('/')[5];
       setUsername(currentUser);
-      axios.get(getReviews+currentUser)
-      .then((reviews) => {
-        const reviewArray = reviews.data;
-        let sum = 0;
-        reviewArray.forEach((review) => sum+=review.rating)
-        setTotalVotes(reviewArray.length);
-        const denominator = reviewArray.length === 0 ? 1: reviewArray.length; //to avoid dividing by zero
-        setRating(sum/denominator);
-      })
+      axios.get(getReviews + currentUser)
+        .then((reviews) => {
+          const reviewArray = reviews.data;
+          let sum = 0;
+          reviewArray.forEach((review) => sum += review.rating)
+          setTotalVotes(reviewArray.length);
+          const denominator = reviewArray.length === 0 ? 1 : reviewArray.length; //to avoid dividing by zero
+          setRating(sum / denominator);
+        })
 
     });
-    
+
 
   }, []);
 
@@ -87,7 +98,7 @@ function App() {
               .post(addReview, voteObject)
               .then(response => {
                 setVoted(true);
-                const newRating = ((rating*totalVotes)+newValue)/(totalVotes+1)
+                const newRating = ((rating * totalVotes) + newValue) / (totalVotes + 1)
                 setRating(newRating);
                 setTotalVotes(totalVotes + 1);
                 setMessage(`Votaste com ${newValue} estrelas!`);
@@ -96,7 +107,7 @@ function App() {
 
           }
         }
-        }/>
+        } />
     </div>
 
   );
