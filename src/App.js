@@ -4,7 +4,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import { Banner } from 'material-ui-banner';
 import React, { useState, useEffect } from 'react';
-import { TextField, Typography, Button } from '@material-ui/core';
+import { TextField, Typography, Button, List,ListItem,Divider,ListItemText } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import axios from 'axios';
 import 'fontsource-roboto';
@@ -31,7 +31,7 @@ const UserRating = ({ stars }) => {
       </Typography>
       <div
         style={{
-          position: 'relative', left: '62%', top: '12px',
+          position: 'relative', left: '52%', top: '12px',
           transform: 'translate(-50%, -50%)',
         }}
       >
@@ -53,9 +53,12 @@ const Message = ({ message }) => {
 const ShowReviews= ({reviews,showReviews}) => {
   if(showReviews){
     return(
-      <ul>
-        {reviews.map((e) => <li>{e.review} <strong>{e.rating}/5 </strong> </li>)}
-      </ul>
+      <div style = {{width:'350px'}}>
+      <List>
+        <Divider/>
+        {reviews.map((e) =><><ListItem><ListItemText primaryTypographyProps= {{variant:"subtitle2", component:"subtitle2"}} primary={e.review+" - "+e.rating+"/5"}/></ListItem><Divider/></>)}
+      </List>
+      </div>
     )
   }
   return null;
@@ -66,7 +69,7 @@ const Reviews = ({ reviews }) => {
   const iconComponent = showReviews ? <VisibilityOffIcon size='small' /> : <VisibilityIcon size='small' />;
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div style={{ marginTop: "10px",display: 'grid', placeItems: 'center' }}>
       <Button
         variant="contained"
         color="primary"
@@ -122,6 +125,7 @@ function App() {
         open
         showDismissButton={false}
       />
+      <div style = {{display: 'grid', placeItems: 'center'}}>
       <Info message={"Username"} info={username} />
       <Info message={"Total de votos"} info={totalVotes} />
       <UserRating stars={rating} />
@@ -159,7 +163,9 @@ function App() {
         }
       }
       } />
+      </div>
       <Reviews reviews={reviews} />
+      
 
     </div>
 
