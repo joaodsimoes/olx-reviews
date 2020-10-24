@@ -1,6 +1,7 @@
 Note: To load the extension onto a chromium browser, clone this repo, run npm install, then npm run build and then load unpacked the build directory
 
 Opening the extension: 
+
 ![leaving review](https://joaodaniel.eu/images/olx_reviews.jpg)
 
 Trying to leave a review without any text:
