@@ -1,4 +1,6 @@
-Note: To load the extension onto a chromium browser, clone this repo, run npm install, then npm run build and then load unpacked the build directory
+Notes: 
+- To load the extension onto a chromium browser, clone this repo, remove the backend subfolder, run npm install, then npm run build and finally load unpacked the build directory
+- The backend is in the "backend" subdirectory, remove it from this parent directory and then run npm install. you'll need dotenv or some other way to pass environment variables to the server, it takes two, PORT (the port the server will listen to) and MONGODB_URI (your key connecting to a mongoDB database).
 
 Opening the extension: 
 
