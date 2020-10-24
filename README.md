@@ -1,13 +1,20 @@
-Note: To load the extension onto a chromium browser, clone this repo, run npm install, then npm run build and then load unpacked the build directory
+Notes: 
+- To load the extension onto a chromium browser, clone this repo, remove the backend subfolder, run npm install, then npm run build and finally load unpacked the build directory
+- The backend is in the "backend" subdirectory, remove it from this parent directory and then run npm install. you'll need dotenv or some other way to pass environment variables to the server, it takes two, PORT (the port the server will listen to) and MONGODB_URI (your key connecting to a mongoDB database).
 
-Leaving a review: 
-![leaving review](https://i.imgur.com/MYTqwH5.gif)
+Opening the extension: 
 
-Trying to leave more than one review (the same ip can only review the same user once.)
-![leaving more than one review](https://i.imgur.com/kBicDR0.gif)
+![leaving review](https://joaodaniel.eu/images/olx_reviews.jpg)
+
+Trying to leave a review without any text:
+
+![no text](https://joaodaniel.eu/images/olx_reviews-text.jpg)
+
+Checking user reviews:
+
+![checking_reviews](https://joaodaniel.eu/images/olx_reviews-reviews.jpg)
 
 TODO:
-- Refine the UI so it looks cleaner
 - Add a content script that interacts with the storage-API to serve as a caching mechanism to avoid spamming the server.
 - If the user has already voted, let him update the vote by sending an HTTP PATCH to the server
 
