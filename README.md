@@ -5,9 +5,11 @@ Opening the extension:
 ![leaving review](https://joaodaniel.eu/images/olx_reviews.jpg)
 
 Trying to leave a review without any text:
+
 ![no text](https://joaodaniel.eu/images/olx_reviews-text.jpg)
 
-Checking user reviews
+Checking user reviews:
+
 ![checking_reviews](https://joaodaniel.eu/images/olx_reviews-reviews.jpg)
 
 TODO:
